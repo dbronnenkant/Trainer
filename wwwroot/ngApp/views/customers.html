@@ -1,0 +1,7 @@
+<table class="w3-table-all">
+    <tr><th>Email</th></tr>
+    <tr ng-repeat="customer in controller.customers">
+        <td> {{ customer.email }}  </td>
+        <td><button ng-click="controller.onclick(customer.customerId)">Get it!!</button></td>
+    </tr>
+</table>

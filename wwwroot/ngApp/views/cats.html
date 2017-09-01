@@ -1,0 +1,13 @@
+<h1>Cats</h1>
+
+<table class="w3-table-all"> 
+    <tr><th>Name</th></tr>
+    <tr ng-repeat="x in controller.cats"> 
+        <td>
+        {{ x.name }}
+        </td>
+        <td> <button ng-click="controller.click(x.catId)">Get Details</button></td>
+    
+    </tr>
+    
+    </table>

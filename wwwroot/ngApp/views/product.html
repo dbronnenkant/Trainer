@@ -1,0 +1,6 @@
+<header class="w3-container w3-theme w3-card-2">
+    <h1>Product View</h1>
+</header>
+
+<p ng-repeat="product in controller.products">{{ product.name }}<button ng-click="controller.click(product.productId)">Click to be done</button></p>
+

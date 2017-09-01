@@ -2,9 +2,12 @@ var myApp = angular.module("myApp", [ "ui.router", "ngResource" ]);
 myApp.controller("MainController", MainController);
 myApp.controller("DogsController", DogsController);
 myApp.controller("DogDetailsController", DogDetailsController);
+myApp.controller("BooksController", BooksController);
+myApp.controller("BookDetailsController", BookDetailsController);
 
 myApp.service("$productService", ProductService);
 myApp.service("$dogService", DogService);
+myApp.service("$bookService", BookService);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
@@ -22,6 +25,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: "/dogDetails/:id",
             templateUrl: "/ngApp/views/dogDetails.html",
             controller: DogDetailsController,
+            controllerAs: "controller"
+        }).state("bookDetails", {
+            url: "/bookDetails/:id",
+            templateUrl: "/ngApp/views/bookDetails.html",
+            controller: BookDetailsController,
+            controllerAs: "controller"
+        }).state("books", {
+            url: "/books",
+            templateUrl: "/ngApp/views/books.html",
+            controller: BooksController,
             controllerAs: "controller"
         });
 

@@ -6,11 +6,14 @@ myApp.controller("BooksController", BooksController);
 myApp.controller("BookDetailsController", BookDetailsController);
 myApp.controller("CatsController", CatsController);
 myApp.controller("CatDetailsController", CatDetailsController);
+myApp.controller("ComputersController", ComputersController);
+myApp.controller("ComputerDetailsController", ComputerDetailsController);
 
 myApp.service("$productService", ProductService);
 myApp.service("$dogService", DogService);
 myApp.service("$bookService", BookService);
 myApp.service("$catService", CatService);
+myApp.service("$computerService", ComputerService);
 
 myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
@@ -48,6 +51,16 @@ myApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             url: "/cats",
             templateUrl: "/ngApp/views/cats.html",
             controller: CatsController,
+            controllerAs: "controller"
+        }).state("computerDetails", {
+            url: "/computerDetails/:id",
+            templateUrl: "/ngApp/views/computerDetails.html",
+            controller: ComputerDetailsController,
+            controllerAs: "controller"
+        }).state("computers", {
+            url: "/computers",
+            templateUrl: "/ngApp/views/computers.html",
+            controller: ComputersController,
             controllerAs: "controller"
         });
 
